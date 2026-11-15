@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lantern: Server then Mobile",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/src/Lantern.Server/Lantern.Server.csproj",
+      "serverReadyAction": {
+        "action": "startDebugging",
+        "pattern": "Now listening on:\\s+(https?://\\S+)",
+        "name": "Lantern: Mobile"
+      }
+    },
+    {
+      "name": "Lantern: Mobile",
+      "type": "maui",
+      "request": "launch",
+      "preLaunchTask": "maui: Build"
+    }
+  ]
+}

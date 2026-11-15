@@ -1,0 +1,108 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Lantern.Server/1.0.0": {
+        "dependencies": {
+          "Lantern.Shared": "1.0.0",
+          "OllamaSharp": "5.5.2"
+        },
+        "runtime": {
+          "Lantern.Server.dll": {}
+        }
+      },
+      "Microsoft.Extensions.AI/10.8.0": {
+        "dependencies": {
+          "Microsoft.Extensions.AI.Abstractions": "10.8.0",
+          "System.Numerics.Tensors": "10.0.10"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.AI.dll": {
+            "assemblyVersion": "10.8.0.0",
+            "fileVersion": "10.800.26.36402"
+          }
+        }
+      },
+      "Microsoft.Extensions.AI.Abstractions/10.8.0": {
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
+            "assemblyVersion": "10.8.0.0",
+            "fileVersion": "10.800.26.36402"
+          }
+        }
+      },
+      "OllamaSharp/5.5.2": {
+        "dependencies": {
+          "Microsoft.Extensions.AI": "10.8.0",
+          "Microsoft.Extensions.AI.Abstractions": "10.8.0"
+        },
+        "runtime": {
+          "lib/net10.0/OllamaSharp.dll": {
+            "assemblyVersion": "5.5.2.0",
+            "fileVersion": "5.5.2.0"
+          }
+        }
+      },
+      "System.Numerics.Tensors/10.0.10": {
+        "runtime": {
+          "lib/net10.0/System.Numerics.Tensors.dll": {
+            "assemblyVersion": "10.0.0.10",
+            "fileVersion": "10.0.1026.32716"
+          }
+        }
+      },
+      "Lantern.Shared/1.0.0": {
+        "runtime": {
+          "Lantern.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lantern.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.AI/10.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QfthL8e2X/Z6jRs4YyVS2+HTApJvhz725l35HYZ9cfwlEuQnpzY89NJoGNmpuNZn4LIvvQOQeZIbu3jggBXgUg==",
+      "path": "microsoft.extensions.ai/10.8.0",
+      "hashPath": "microsoft.extensions.ai.10.8.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.AI.Abstractions/10.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1tJZ5sAYrEq1YjNg8GrZSL1tVodsWRfrgybGsZo5DQsWQgLZ+dSR5uFowIS6vb/9zxGBPl7xpYq53QMjNObO9w==",
+      "path": "microsoft.extensions.ai.abstractions/10.8.0",
+      "hashPath": "microsoft.extensions.ai.abstractions.10.8.0.nupkg.sha512"
+    },
+    "OllamaSharp/5.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oI/dJ5xk9X2eAUSv0kvN26LtN900muLdmyFAIQLUkzOJZi4blIfQzPdkHWH8i5/Tf9SQVoc2pxTz3Tjfrp7qlQ==",
+      "path": "ollamasharp/5.5.2",
+      "hashPath": "ollamasharp.5.5.2.nupkg.sha512"
+    },
+    "System.Numerics.Tensors/10.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9Ildb4Y9maDztB0ZRGxsNShbpCQ2Tjv2dr4IjskBxpTGhH7aIz1+oC+Hl833ASs/htWwsH6myNe+sRpeyCzeMQ==",
+      "path": "system.numerics.tensors/10.0.10",
+      "hashPath": "system.numerics.tensors.10.0.10.nupkg.sha512"
+    },
+    "Lantern.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
