@@ -1,3 +1,4 @@
+using Lantern.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -15,10 +16,28 @@ public class OllamaController : ControllerBase
     public async Task<IActionResult> GetModelsAsync()
     {
         var models = await _ollamaService.GetLocalModelsAsync();
-        foreach(var model in models)
-        {
-            
-        }
+
         return Ok(models);
     }
+    [HttpGet("CheckModelAvailability")]
+    public async Task<IActionResult> CheckModelAvailability(string userRequestedModel)
+    {
+        if (string.IsNullOrWhiteSpace(userRequestedModel))
+        {
+            return BadRequest("Model name can not be empty.");
+        }
+        var modelIsAvaile = await _ollamaService.IsModelAvailableAsync(userRequestedModel);
+
+        if (!modelIsAvaile)
+        {
+            return NotFound("Model is not on the server");
+        }
+        // set the converstation model 
+        return Ok($"{userRequestedModel} is available");
+
+    }
+
+
+
+
 }
