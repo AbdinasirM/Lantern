@@ -1,14 +1,16 @@
-namespace Lantern.Shared;
-public class ConversationModel
+namespace Lantern.Database.Models;
+public class ConversationEntity
 {
     public  Guid Id {get; init;} =  Guid.NewGuid();
+    public Guid UserId {get; private set;} 
     public string Title {get; private set;}
     public string SelectedModel {get; private set;} 
 
-    public ConversationModel(string title, string selectedModel)
+    public ConversationEntity(string title, string selectedModel, Guid userId)
     {
         Title = !string.IsNullOrWhiteSpace(title) ? title : throw new ArgumentException("Title can not be empty");
         SelectedModel = !string.IsNullOrWhiteSpace(selectedModel) ? selectedModel : throw new ArgumentException("Model can not be empty!");
+        UserId = userId != Guid.Empty ? userId : throw new ArgumentException("User Id can not be empty");
     }
     public  bool SetModel(string modelname)
     {
