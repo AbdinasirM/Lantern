@@ -34,7 +34,7 @@ I'm keeping this list in the repo so I can pick up where I left off after work.
 
 The first device is already registered. Next, it needs to authorize a second device using a short-lived code.
 
-- [ ] **Session 1 (~1h):** Make `PairingController`, inject the pairing service, and add a protected endpoint to request a code. Get the user ID from the authenticated token. Test it in Postman.
+- [x] **Session 1 (~1h):** Make `PairingController`, inject the pairing service, and add a protected endpoint to request a code. Get the user ID from the authenticated token. Test it in Postman.
 - [ ] **Session 2 (~1–2h):** Accept a submitted code and check whether it's valid, expired, already used, or locked after too many attempts.
 - [ ] **Session 3 (~1–2h):** On a valid code, create the second device and issue its own random token. The code must only work once, even if two requests arrive together.
 - [ ] **Session 4 (~1–2h):** Test the full pairing flow in Postman. Add request limits, handle six-digit code collisions, and check invalid/reused codes.
@@ -94,7 +94,7 @@ I'll track real focused time from now on. For the first day, I only have an appr
 | Date | Time | What I worked on |
 | --- | --- | --- |
 | 2026-11-15 | ~7h elapsed (estimate; breaks not tracked) | SQLite/EF Core models and migrations, registration, device-token authentication, protected route, Postman tests. |
-
+| 2026-11-16 | ~1h | Added the authenticated pairing-code endpoint, tested it in Postman, and verified the code was saved in SQLite. |
 ### End of each session
 
 - [ ] Build and test what I changed.
