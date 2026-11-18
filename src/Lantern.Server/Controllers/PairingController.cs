@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Lantern.Server.Services;
 using Lantern.Shared;
+using Lantern.Database.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,5 +34,18 @@ public class PairingController : ControllerBase
         return Ok(new {code = newPairingCode});
     }
 
+    [HttpPost("redeem")]
+    public async Task<IActionResult> RedeemCode([FromBody] RedeemPairingCodeRequestDTO request)
+    {
+
+        var isCodeRedeemed = await _pairingService.RedeemPairingCodeAsync(request.Code,  request.DeviceName);
+        if(isCodeRedeemed == null)
+        {
+            return BadRequest("Invalid code or device name");
+        } 
+        return Ok(isCodeRedeemed);
+
+
+    }
 
 }
