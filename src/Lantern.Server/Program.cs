@@ -3,6 +3,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Lantern.Server.Services;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,19 @@ var sqlitePath = sqliteBuilder.DataSource;
 var absoluteSqlitePath = Path.GetFullPath(sqlitePath, builder.Environment.ContentRootPath);
 sqliteBuilder.DataSource = absoluteSqlitePath;
 builder.Services.AddDbContext<LanternDbContext>(options => options.UseSqlite(sqliteBuilder.ToString()));
+builder.Services.AddRateLimiter(options =>
+{
+options.AddPolicy("pairing-redeem", limiter =>
+{
+   async clientIp =>
+   {
+       var clientIP= context.Connection.RemoteIpAddress.
+   }
+}
+);
 
+options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+});
 
 
 
@@ -42,6 +55,8 @@ if (app.Environment.IsDevelopment())
 
 
 }
+app.UseRouting();
+app.UseRateLimiter();
 
 app.UseAuthentication();
 app.UseAuthorization();
